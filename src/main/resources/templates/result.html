@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Result</title>
+</head>
+<body>
+    <h1>Search result for '<span data-th-text="${result.searchTerm}"></span>'</h1>
+    <ul>
+        <li data-th-each="book: ${result.bookList}">
+            <a data-th-href="@{/book/{workId}(workId=${book.workId})}">
+                <span data-th-text="${book.title}"></span>
+            </a>
+        </li>
+    </ul>
+    <h4><a data-th-href="@{/}">Back</a></h4>
+</body>
+</html>
